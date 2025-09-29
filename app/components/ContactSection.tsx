@@ -85,7 +85,7 @@ export default function ContactSection() {
 				</div>
 				<div className="font-mono">
 					<p className="text-green-500 mb-2">$ contact --info</p>
-					<h2 className="text-3xl font-bold mt-8 text-gray-200">Let's Connect</h2>
+					<h2 className="text-3xl font-bold mt-8 text-gray-200">Lets Connect</h2>
 					<p className="text-green-500 mb-2">$ location --current</p>
 					<div className="flex items-center gap-2 text-gray-300">
 						<svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"></svg>
