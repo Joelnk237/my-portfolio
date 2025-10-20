@@ -2,14 +2,22 @@
 
 //import { motion } from 'framer-motion';
 
-export default function ContactSection() {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+	faCogs,
+	faDatabase,
+	faCloud,
+	faShieldAlt
+} from "@fortawesome/free-solid-svg-icons";
+
+export default function CompetencesSection() {
 	return (
-        <section className="py-20 px-4 bg-gray-900/50">
+        <section className="py-20 px-4 bg-gray-900/50" id="competences">
             <div className="max-w-6xl mx-auto">
                 <h2 className="text-3xl font-bold mb-12 text-center" style={{opacity: 1}}>Impact & Achievements</h2>
                 <div className="grid grid-cols-1 gap-12">
                     <div>
-                        <h3 className="text-xl font-semibold mb-6 text-green-400">API & Architecture</h3>
+                        <h3 className="text-xl font-semibold mb-6 text-green-400"><FontAwesomeIcon icon={faCogs} className="text-green-400 w-5 h-5" /> API & Architecture</h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700" style={{opacity: 1, transform: 'none' }}>
                                 <h4 className="text-lg font-semibold text-gray-300">API Gateway</h4>
@@ -31,10 +39,10 @@ export default function ContactSection() {
                     </div>
 
                     <div>
-                        <h3 className="text-xl font-semibold mb-6 text-green-400">Data & Databases</h3>
+                        <h3 className="text-xl font-semibold mb-6 text-green-400"><FontAwesomeIcon icon={faDatabase} className="text-green-400 w-5 h-5" /> Data & Databases</h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700" style={{opacity: 1, transform: 'none' }}>
-                                <h4 className="text-lg font-semibold text-gray-300">API Gateway</h4>
+                                {/*<h4 className="text-lg font-semibold text-gray-300">API Gateway</h4>*/}
                                 <ul className="mt-2 space-y-2 text-gray-400">
                                 <li>- Database Modeling</li>
                                 <li>- Database Normalization</li>
@@ -42,7 +50,7 @@ export default function ContactSection() {
                                 </ul>
                             </div>
                             <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700" style={{opacity: 1, transform: 'none'}}>
-                                <h4 className="text-lg font-semibold text-gray-300">Architecture</h4>
+                                {/*<h4 className="text-lg font-semibold text-gray-300">Architecture</h4>*/}
                                 <ul className="mt-2 space-y-2 text-gray-400">
                                 <li>- SQL Query Optimization</li>
                                 <li>- Data Validation</li>
@@ -52,10 +60,10 @@ export default function ContactSection() {
                         </div>
                     </div>
                     <div>
-                        <h3 className="text-xl font-semibold mb-6 text-green-400">Deployment & DevOps</h3>
+                        <h3 className="text-xl font-semibold mb-6 text-green-400"><FontAwesomeIcon icon={faCloud} className="text-green-400 w-5 h-5" /> Deployment & DevOps</h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700" style={{opacity: 1, transform: 'none' }}>
-                                <h4 className="text-lg font-semibold text-gray-300">API Gateway</h4>
+                                {/*<h4 className="text-lg font-semibold text-gray-300">API Gateway</h4>*/}
                                 <ul className="mt-2 space-y-2 text-gray-400">
                                 <li>- Containerization (Docker)</li>
                                 <li>- Continuous Deployment</li>
@@ -63,10 +71,31 @@ export default function ContactSection() {
                                 </ul>
                             </div>
                             <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700" style={{opacity: 1, transform: 'none'}}>
-                                <h4 className="text-lg font-semibold text-gray-300">Architecture</h4>
+                                {/*<h4 className="text-lg font-semibold text-gray-300">Architecture</h4>*/}
                                 <ul className="mt-2 space-y-2 text-gray-400">
                                 <li>- Unit Testing & Integration Testing</li>
                                 <li>- Continuous Integration (CI/CD)</li>
+                                {/*<li>- Transactions Management</li>*/}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 className="text-xl font-semibold mb-6 text-green-400"><FontAwesomeIcon icon={faShieldAlt} className="text-green-400 w-5 h-5" /> Security</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700" style={{opacity: 1, transform: 'none' }}>
+                                {/*<h4 className="text-lg font-semibold text-gray-300">API Gateway</h4>*/}
+                                <ul className="mt-2 space-y-2 text-gray-400">
+                                <li>- Authentication & Authorization</li>
+                                <li>- JWT & OAuth2</li>
+                                {/*<li>- ORM (Object-Relational Mapping)</li>*/}
+                                </ul>
+                            </div>
+                            <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700" style={{opacity: 1, transform: 'none'}}>
+                                {/*<h4 className="text-lg font-semibold text-gray-300">Architecture</h4>*/}
+                                <ul className="mt-2 space-y-2 text-gray-400">
+                                <li>- Secure API Design (HTTPS, CORS)</li>
+                                <li>- Input Sanitization</li>
                                 {/*<li>- Transactions Management</li>*/}
                                 </ul>
                             </div>
