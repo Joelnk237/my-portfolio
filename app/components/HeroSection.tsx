@@ -38,7 +38,7 @@ const [isClient, setIsClient] = useState(false);
   useEffect(() => setIsClient(true), []);
 	
 	return (
-		<section className="relative min-h-screen items-center justify-center overflow-hidden h-[95vh]"> {/* relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 */}
+		<section id="home" className="relative min-h-screen items-center justify-center overflow-hidden h-[95vh]"> {/* relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 */}
 			{/* --- Arrière-plan avec bulles --- */}
       {/*<div
         ref={bubbleContainerRef}
@@ -49,24 +49,27 @@ const [isClient, setIsClient] = useState(false);
       {/* --- Fond de bulles animées --- */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0  opacity-30" />
-        {isClient && [...Array(100)].map((_, i) => {
+        {isClient && [...Array(50)].map((_, i) => {
           const size = 4 + Math.random() * 12;
           const left = 10 + Math.random() * 90;
-          const top = 10 + Math.random() * 60;
-          const delay = 3;
-          const duration = 3 + Math.random() * 4;
+          const top = 10 + Math.random() * 65;
+          //const delay = 3;
+          const delay = (i * 0.6) % 3;
+          //const duration = 3 + Math.random() * 4;
+          const speeds = ['animate-float-slow', 'animate-float-medium', 'animate-float-fast'];
+          const animation = speeds[i % speeds.length]
 
           return (
             <div
               key={i}
-              className="absolute rounded-full bg-gradient-to-r from-purple-400 to-pink-400 opacity-70 blur-sm animate-bounce"
+              className={`absolute rounded-full bg-gradient-to-r from-purple-400 to-pink-400 opacity-70 blur-sm ${animation}`}
               style={{
                 width: `${size}px`,
                 height: `${size}px`,
                 left: `${left}%`,
                 top: `${top}%`,
                 animationDelay: `${delay}s`,
-                animationDuration: `${duration}s`,
+                //animationDuration: `${duration}s`,
               }}
             />
           );
@@ -94,7 +97,7 @@ const [isClient, setIsClient] = useState(false);
 					<FontAwesomeIcon icon={faCloud} className="w-5 h-5" />
 				</div>
 			</div>*/}
-			<div className="relative top-15 z-10 flex-col items-center justify-center px-4">
+			<div className="relative top-[5vh] z-10 flex-col items-center justify-center px-4">
 			<div className="text-center">
 				<div className="mb-6 sm:mb-8">
 					<Image src="/portrait.jpg" alt="Profile Picture" width={120} height={120} className="rounded-full mx-auto border-4 border-gray-700 shadow-lg" />
@@ -108,9 +111,9 @@ const [isClient, setIsClient] = useState(false);
 			<div className="relative z-10 max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8 mt-8">
 				<div className="bg-black/50 backdrop-blur-lg rounded-lg border border-gray-800 p-6" >
 					<div className="flex items-center gap-2 mb-4">
+					<div className='w-3 h-3 rounded-full bg-green-500'></div>
 					<div className='w-3 h-3 rounded-full bg-red-500'></div>
 					<div className='w-3 h-3 rounded-full bg-yellow-500'></div>
-					<div className='w-3 h-3 rounded-full bg-green-500'></div>
 					</div>
 					<div className="font-mono">
 					<p className="text-green-500">$ whoami</p>

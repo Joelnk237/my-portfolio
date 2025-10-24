@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Languages } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function NavSection() {
@@ -28,6 +28,7 @@ const [isOpen, setIsOpen] = useState(false);
     { label: 'Skills', href: '/#skills' },
     { label: 'Achievements', href: '/#competences' },
     { label: 'Projects', href: '/#projects' },
+    { label: 'Contact', href: '/#contact' },
   ];
 
 	return (
@@ -94,7 +95,7 @@ const [isOpen, setIsOpen] = useState(false);
       >
         <div className="flex items-center justify-between w-full h-16 px-4 sm:px-6 lg:px-8 max-w-[1240px] mx-auto">
           {/* Logo */}
-          <a href="/" className="text-xl font-bold text-primary">
+          <a href="/" className="text-xl font-bold text-green-500">
             NK
           </a>
 
@@ -104,7 +105,7 @@ const [isOpen, setIsOpen] = useState(false);
               {menuItems.map((item) => (
                 <li key={item.label}>
                   <a href={item.href}>
-                    <span className="px-4 py-2 text-sm font-semibold uppercase text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer relative group">
+                    <span className="px-4 py-2 text-sm font-semibold uppercase text-green-500 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer relative group">
                       {item.label}
                       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-purple-600 group-hover:w-full transition-all duration-300"></span>
                     </span>
@@ -115,23 +116,24 @@ const [isOpen, setIsOpen] = useState(false);
 
             {/* Bouton langue */}
             <button
-              className="relative group ml-2 p-2.5 bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl rounded-xl 
-                border border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-primary 
+              className="relative group ml-2 p-2 bg-gray-900/50 dark:bg-gray-800/60 backdrop-blur-xl rounded-xl 
+                border border-green-500 dark:border-gray-700 hover:border-primary dark:hover:border-primary 
                 transition-all shadow-lg"
             >
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-xl blur opacity-0 group-hover:opacity-30 transition duration-300"></div>
               <div className="relative flex items-center gap-1.5">
-                <span className="text-sm font-bold text-gray-700 dark:text-gray-200">EN</span>
+                <Languages className="w-4 h-4 text-green-500 dark:text-gray-200" />
+                <span className="text-sm font-bold text-green-500 dark:text-gray-200">DE</span>
               </div>
             </button>
 
             {/* Bouton dark mode */}
             <button
-              className="relative group p-2.5 bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl rounded-xl 
-                border border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-primary 
-                transition-all shadow-lg"
+              className="relative group p-2 bg-gray-900/50 dark:bg-gray-800/60 backdrop-blur-xl rounded-xl 
+                border border-green-500 dark:border-gray-700 hover:border-primary dark:hover:border-primary 
+                transition-all shadow-lg text-green-500"
               aria-label="Switch to dark mode"
-            ></button>
+            >☀️/🌑</button>
           </div>
 
           {/* --- Bouton Menu Mobile --- */}
@@ -156,10 +158,10 @@ const [isOpen, setIsOpen] = useState(false);
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-y-0 right-0 w-64 bg-gray-900/95 backdrop-blur-xl p-6 flex flex-col gap-6 text-white z-[200] shadow-xl"
+            className="fixed inset-y-0 right-0 w-90 bg-gray-900/95 backdrop-blur-xl p-6 flex flex-col gap-6 text-white z-[200] shadow-xl"
           >
             {/* Header du drawer */}
-            <div className="flex justify-between items-center mb-4">
+            <div className="flex justify-between items-center mb-4  mb-8 pb-6 border-b border-gray-200 dark:border-gray-700">
               <span className="text-lg font-semibold">Menu</span>
               <button onClick={toggleMenu}>
                 <X className="text-gray-300 hover:text-white" size={24} />
@@ -180,6 +182,9 @@ const [isOpen, setIsOpen] = useState(false);
                 </li>
               ))}
             </ul>
+            <div className='pt-6 border-t border-gray-200 dark:border-gray-700' style={{opacity: 1, transform: 'none'}}>
+              <p>Let's build something legendary together</p>
+            </div>
           </motion.aside>
         )}
       </AnimatePresence>
