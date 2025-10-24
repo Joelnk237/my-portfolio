@@ -20,7 +20,7 @@ export default function CompetencesSection() {
       transition: {
         delay: i * 0.2,
         duration: 0.6,
-        ease: "easeOut" as any,
+        ease: [0.25, 0.1, 0.25, 1],
       },
     }),
   };
