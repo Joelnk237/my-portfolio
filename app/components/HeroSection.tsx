@@ -2,34 +2,8 @@
 import Image from 'next/image';
 
 import { useEffect, useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faLightbulb,
-  faCode,
-  faCloud,
-  faCogs,
-  faGlobe,
-  faDatabase,
-  faLock,
-  faToolbox,
-  faScrewdriverWrench,
-  faRocket,
-  faBrain,
-} from '@fortawesome/free-solid-svg-icons'
 
-const icons = [
-  faLightbulb,
-  faCode,
-  faCloud,
-  faCogs,
-  faGlobe,
-  faDatabase,
-  faLock,
-  faToolbox,
-  faScrewdriverWrench,
-  faRocket,
-  faBrain,
-]
+
 
 export default function HeroSection() {
 

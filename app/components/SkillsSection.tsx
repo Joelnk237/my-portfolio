@@ -57,7 +57,7 @@ export default function SkillsSection() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {skills.map((skill, i) => (
+          {skills.map((skill) => (
             <motion.div
               key={skill}
               variants={item}

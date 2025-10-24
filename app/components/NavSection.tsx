@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Languages } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from "next/link";
 
 export default function NavSection() {
 
@@ -95,21 +96,21 @@ const [isOpen, setIsOpen] = useState(false);
       >
         <div className="flex items-center justify-between w-full h-16 px-4 sm:px-6 lg:px-8 max-w-[1240px] mx-auto">
           {/* Logo */}
-          <a href="/" className="text-xl font-bold text-green-500">
+          <Link href="/" className="text-xl font-bold text-green-500">
             NK
-          </a>
+          </Link>
 
           {/* --- Menu Desktop --- */}
           <div className="hidden md:flex items-center gap-2">
             <ul className="flex items-center gap-1">
               {menuItems.map((item) => (
                 <li key={item.label}>
-                  <a href={item.href}>
+                  <Link href={item.href}>
                     <span className="px-4 py-2 text-sm font-semibold uppercase text-green-500 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer relative group">
                       {item.label}
                       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-purple-600 group-hover:w-full transition-all duration-300"></span>
                     </span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -172,18 +173,18 @@ const [isOpen, setIsOpen] = useState(false);
             <ul className="flex flex-col gap-4">
               {menuItems.map((item) => (
                 <li key={item.label}>
-                  <a
+                  <Link
                     href={item.href}
                     onClick={() => setIsOpen(false)}
                     className="text-lg uppercase font-medium hover:text-primary transition-colors"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
             <div className='pt-6 border-t border-gray-200 dark:border-gray-700' style={{opacity: 1, transform: 'none'}}>
-              <p>Let's build something legendary together</p>
+              <p>Let&apos;s build something legendary together</p>
             </div>
           </motion.aside>
         )}
