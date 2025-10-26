@@ -30,7 +30,7 @@ export default function SkillsSection() {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 150, damping: 10 },
+    transition: { stiffness: 150, damping: 10 },
   },
   };
 
