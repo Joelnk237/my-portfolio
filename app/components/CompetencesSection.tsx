@@ -2,6 +2,7 @@
 
 import { motion, easeOut } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
 	faCogs,
 	faDatabase,
@@ -29,7 +30,7 @@ export default function CompetencesSection() {
   type SectionItem = [string, string[]];
 
     type Section = {
-    icon: any;
+    icon: IconDefinition;
     title: string;
     items: SectionItem[];
     };
