@@ -96,7 +96,7 @@ export default function CompetencesSection() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {section.items.map(([subtitle, list], j) => (
                   <motion.div
-                    key={subtitle}
+                    key={subtitle as string}
                     className="bg-gray-800/50 rounded-lg p-6 border border-gray-700 hover:shadow-lg hover:shadow-green-500/10 transition-all"
                     variants={fadeUp}
                     custom={j + i}
