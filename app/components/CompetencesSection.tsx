@@ -26,7 +26,14 @@ export default function CompetencesSection() {
   };
 
   // Tes sections structurées
-  const sections = [
+  type SectionItem = [string, string[]];
+
+    type Section = {
+    icon: any;
+    title: string;
+    items: SectionItem[];
+    };
+  const sections : Section[] = [
     {
       icon: faCogs,
       title: "API & Architecture",
