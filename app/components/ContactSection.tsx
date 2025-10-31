@@ -32,7 +32,7 @@ export default function ContactSection() {
 					<p className="text-green-500 mt-8 mb-2">$ contact --email</p>
 					<a href="mailto:joelgaetan44@gmail.com" className="inline-block px-6 py-3 bg-green-500/10 text-green-400 rounded-lg border border-green-500/20 hover:bg-green-500/20 transition-colors" >joelgaetan44@gmail.com</a>
 					<p className="text-green-500 mt-8 mb-2">$ cat resume.pdf</p>
-					<a href="/path-to-resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-green-500/10 text-green-400 rounded-lg border border-green-500/20 hover:bg-green-500/20 transition-colors" >
+					<a href="/resume.pdf" download="Joel-Kamga-Resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-green-500/10 text-green-400 rounded-lg border border-green-500/20 hover:bg-green-500/20 transition-colors" >
 						<svg className='w-5 h-5' fill='currentColor'><FontAwesomeIcon icon={faFile} /></svg>
 						<span>Download Resume</span>
 					</a>
