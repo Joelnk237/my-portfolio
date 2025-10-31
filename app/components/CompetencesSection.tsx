@@ -83,7 +83,7 @@ export default function CompetencesSection() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
-          Impact & Achievements
+          {/*Impact & Achievements*/}Behind the Code
         </motion.h2>
 
         {/* Boucle sur les sections */}

@@ -3,15 +3,15 @@ import { motion } from "framer-motion";
 export default function SkillsSection() {
 	//const skills = ['JavaScript', 'TypeScript', 'React', 'Node.js', 'Next.js', 'TailwindCSS', 'PostgreSQL', 'GraphQL', 'Git'];
 	const skills = [
-    'JavaScript',
-    'TypeScript',
-    'React',
-    'Node.js',
-    'Next.js',
-    'TailwindCSS',
-    'PostgreSQL',
-	'GraphQL',
-    'Git'
+    'Creativity',
+    'Ownership & Responsibility',
+    'Working Under Pressure',
+    'Team Collaboration',
+    'Fast Learner',
+    'Adaptability',
+    'Analytical Thinking',
+	'Problem Solving',
+    'Attention to Detail'
   ];
 
   // Animation "container" (coordonne les enfants)
@@ -46,7 +46,7 @@ export default function SkillsSection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          Skills & Technologies
+          Soft Skills{/*& Technologies*/}
         </motion.h2>
 
         {/* Grille animée */}
