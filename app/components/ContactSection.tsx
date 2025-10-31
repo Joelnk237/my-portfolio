@@ -1,6 +1,5 @@
 'use client';
 
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import {
@@ -50,7 +49,9 @@ export default function ContactSection() {
 					</Link>
 					<Link href="https://www.linkedin.com/in/joel-gaetan-ngounouo-kamga-195b7735b/" className="flex items-center gap-3 px-4 py-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-colors">
 						<div className="p-2 bg-gray-700/50 rounded-lg group-hover:bg-gray-600/50 transition-colors">
-							<svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24"></svg>
+							<svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M4.98 3.5c0 1.38-1.11 2.5-2.48 2.5S0 4.88 0 3.5 1.11 1 2.48 1s2.5 1.12 2.5 2.5zM.22 24h4.52V7.98H.22V24zM7.98 7.98V24h4.52v-8.27c0-4.4 5.53-4.75 5.53 0V24h4.51V13.74c0-7.88-8.93-7.6-10.04-3.72V7.98H7.98z"/>
+							</svg>
 						</div>
 						<div>
 							<p className="font-semibold text-gray-200">LinkedIn</p>
