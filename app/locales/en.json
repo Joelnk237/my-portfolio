@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "home": "Home",
+    "skills": "Skills",
+    "competences": "Achievements",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "text": "I build exceptional and accessible digital experiences for the web. Focused on creating elegant solutions to complex problems."
+  }
+}

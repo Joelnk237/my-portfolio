@@ -12,7 +12,7 @@ import {
 
 export default function CompetencesSection() {
 
-    // Variants d’animation réutilisables
+    // Animation konfiguration
   const fadeUp = {
     hidden: { opacity: 0, y: 50 },
     visible: (i = 1) => ({
@@ -26,7 +26,7 @@ export default function CompetencesSection() {
     }),
   };
 
-  // Tes sections structurées
+  // Die Sektionen Namen in eine Tabelle speichern
   type SectionItem = [string, string[]];
 
     type Section = {
@@ -73,9 +73,9 @@ export default function CompetencesSection() {
 
 	return (
         <>
-        <section className="py-20 px-4 bg-gray-900/50" >
+        <section id="competences" className="py-20 px-4 bg-gray-900/50" >
       <div className="max-w-6xl mx-auto">
-        {/* Titre animé */}
+        {/* Title mit ANimation */}
         <motion.h2
           className="text-3xl font-bold mb-12 text-center text-gray-100"
           initial="hidden"
@@ -86,7 +86,7 @@ export default function CompetencesSection() {
           {/*Impact & Achievements*/}Behind the Code
         </motion.h2>
 
-        {/* Boucle sur les sections */}
+        {/* Loop über die Sektionen */}
         <div className="grid grid-cols-1 gap-16">
           {sections.map((section, i) => (
             <motion.div

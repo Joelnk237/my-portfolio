@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "home": "Home",
+    "skills": "Kenntnisse",
+    "competences": "Fähigkeiten",
+    "projects": "Projekte",
+    "contact": "Kontaktdaten"
+  },
+  "hero": {
+    "text": "Ich entwickle außergewöhnliche und barrierefreie digitale Web-Erlebnisse. Mein Schwerpunkt liegt auf der Entwicklung eleganter Lösungen für komplexe Probleme."
+  }
+}

@@ -2,10 +2,12 @@
 import Image from 'next/image';
 
 import { useEffect, useState } from 'react'
-
+import { useTranslation } from "@/app/hooks/useTranslation";  // for Traduction
 
 
 export default function HeroSection() {
+  const t = useTranslation(); // for  Traduction
+  const slogan = t.hero.text; //
 
 
 const [isClient, setIsClient] = useState(false);
@@ -13,14 +15,7 @@ const [isClient, setIsClient] = useState(false);
 	
 	return (
 		<section id="home" className="relative min-h-screen items-center justify-center overflow-hidden h-[95vh]"> {/* relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 */}
-			{/* --- Arrière-plan avec bulles --- */}
-      {/*<div
-        ref={bubbleContainerRef}
-        className="absolute inset-0 overflow-hidden pointer-events-none"
-      >
-        <div className="absolute inset-0  opacity-30" />
-      </div>*/}
-      {/* --- Fond de bulles animées --- */}
+      {/* --- Background with bubbles --- */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0  opacity-30" />
         {isClient && [...Array(50)].map((_, i) => {
@@ -33,6 +28,7 @@ const [isClient, setIsClient] = useState(false);
           const speeds = ['animate-float-slow', 'animate-float-medium', 'animate-float-fast'];
           const animation = speeds[i % speeds.length]
 
+          // Komponente erstellen
           return (
             <div
               key={i}
@@ -57,29 +53,14 @@ const [isClient, setIsClient] = useState(false);
 				</div>
 			</div>
 
-			{/*<div className="absolute inset-0 overflow-hidden">
-				<div className="absolute top-20 left-1/4 animate-spin opacity-50" style={{animationDelay: '2s'}}>
-					<span className="text-4xl">❄️</span>
-				</div>
-				<div className="absolute bottom-32 left-1/3 animate-float opacity-50" style={{animationDelay: '1s'}}>
-					<span className="text-4xl">💻</span>
-				</div>
-				<div className="absolute bottom-20 right-1/4 animate-float opacity-50" style={{animationDelay: '3s'}}>
-					<FontAwesomeIcon icon={faCode} className="text-green-400 w-5 h-5" />
-				</div>
-				<div className="absolute top-20 right-1/4 animate-float opacity-50" style={{animationDelay: '1s'}}>
-					<FontAwesomeIcon icon={faCloud} className="w-5 h-5" />
-				</div>
-			</div>*/}
+			
 			<div className="relative top-[5vh] z-10 flex-col items-center justify-center px-4">
 			<div className="text-center">
 				<div className="mb-6 sm:mb-8">
 					<Image src="/portrait.jpg" alt="Profile Picture" width={120} height={120} className="rounded-full mx-auto border-4 border-gray-700 shadow-lg" />
 				</div>
-				{/*<h1 className="text-3xl sm:text-4xl font-bold text-white mb-3 sm:mb-4">Ngounouo Kamga, Joel Gaetan</h1>
-				<p className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8">Full Stack Developer</p>*/}
 				<p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base px-4">
-					I build exceptional and accessible digital experiences for the web. Focused on creating elegant solutions to complex problems.
+					{slogan}
 				</p>
 			</div>
 			<div className="relative z-10 max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8 mt-8">

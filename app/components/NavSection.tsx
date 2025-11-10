@@ -3,9 +3,11 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Languages } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from "@/app/hooks/useTranslation";  // for Translation
 import Link from "next/link";
 
 export default function NavSection() {
+    const t = useTranslation(); // für Traduction
 
 const [isOpen, setIsOpen] = useState(false);
   const [hiddenHeader, setHiddenHeader] = useState(false);
@@ -13,7 +15,7 @@ const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // Masquer la nav au scroll vers le bas, l’afficher vers le haut
+  // Navigation beim Scrollen nach unten ausblenden, beim Scrollen nach oben anzeigen
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -24,70 +26,38 @@ const [isOpen, setIsOpen] = useState(false);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollTop]);
 
+  // Die Menü Items erstellen
   const menuItems = [
-    { label: 'Home', href: '/' },
-    { label: 'Skills', href: '/#skills' },
-    { label: 'Achievements', href: '/#competences' },
-    { label: 'Projects', href: '/#projects' },
-    { label: 'Contact', href: '/#contact' },
+    { label: t.nav.home, href: '/' },
+    { label: t.nav.skills, href: '/#skills' },
+    { label: t.nav.competences, href: '/#competences' },
+    { label: t.nav.projects, href: '/#projects' },
+    { label: t.nav.contact, href: '/#contact' },
   ];
 
-	return (
-        /*<nav className="fixed top-0 w-full h-15 z-[100] transition-all duration-300 bg-white/60 dark:bg-gray-900/60 backdrop-blur-md" style={{transform: 'none'}}>
-            <div className="flex items-center justify-between w-full h-full px-4 sm:px-6 lg:px-8 max-w-[1240px] mx-auto">
-                <a href="/"></a>
-                <div className="hidden md:flex items-center gap-2">
-                    <ul className="flex items-center gap-1">
-                        <li style={{opacity: 1, transform: 'none'}}>
-                            <a href="/">
-                                <span className="px-4 py-2 text-sm font-semibold uppercase text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer relative group" tabIndex={0}>
-                                    Home
-                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-purple-600 group-hover:w-full transition-all duration-300"></span>
-                                </span>
-                            </a>
-                        </li>
-                        <li style={{opacity: 1, transform: 'none'}}>
-                            <a href="/#skills">
-                                <span className="px-4 py-2 text-sm font-semibold uppercase text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer relative group" tabIndex={0}>
-                                    Skills
-                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-purple-600 group-hover:w-full transition-all duration-300"></span>
-                                </span>
-                            </a>
-                        </li>
-                        <li style={{opacity: 1, transform: 'none'}}>
-                            <a href="/#competences">
-                                <span className="px-4 py-2 text-sm font-semibold uppercase text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer relative group" tabIndex={0}>
-                                    Achievements
-                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-purple-600 group-hover:w-full transition-all duration-300"></span>
-                                </span>
-                            </a>
-                        </li>
-                        <li style={{opacity: 1, transform: 'none'}}>
-                            <a href="/#projects">
-                                <span className="px-4 py-2 text-sm font-semibold uppercase text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer relative group" tabIndex={0}>
-                                    Projects
-                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-purple-600 group-hover:w-full transition-all duration-300"></span>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <button className="relative group ml-2 p-2.5 bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-primary transition-all shadow-lg" aria-label="Switch to English" tabIndex={0} style={{transform: 'none'}}>
-                        <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-xl blur opacity-0 group-hover:opacity-30 transition duration-300"></div>
-                        <div className="relative flex items-center gap-1.5">
-                            <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 20 20" className="text-lg text-primary" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"></svg>
-                            <span className="text-sm font-bold text-gray-700 dark:text-gray-200">EN</span>
-                        </div>
-                    </button>
-                    <button className="relative group p-2.5 bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl rounded-xl border border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-primary transition-all shadow-lg" aria-label="Switch to dark mode"  style={{transform: 'none'}} tabIndex={0}></button>
-                </div>
-                <div className="md:hidden cursor-pointer p-2 bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl rounded-lg border border-gray-700" tabIndex={0} style={{transform: 'none'}}>
-                    <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 1024 1024" className="text-gray-700 dark:text-gray-200" height="25" width="25" xmlns="http://www.w3.org/2000/svg"></svg>
-                </div>
-            </div> 017643188459
-        </nav>*/
+  //Sprache aktualisieren bzw. festlegen
+  const [locale, setLocale] = useState("en");
 
+useEffect(() => {
+  if (typeof window !== "undefined") {
+    const search = new URLSearchParams(window.location.search);
+    setLocale(search.get("lang") || "en");
+  }
+}, []);
+
+// Funktion bei ausgelöstem Event: Sprache ändern
+const changeLanguage = () => {
+  const nextLang = locale === "de" ? "en" : "de";
+  const url = new URL(window.location.href);
+  url.searchParams.set("lang", nextLang);
+  window.location.href = url.toString();
+};
+
+//Ende
+
+	return (
         <>
-      {/* === Barre principale === */}
+      {/* === Principal Navbar === */}
       <motion.nav
         initial={{ y: 0 }}
         animate={{ y: hiddenHeader ? -100 : 0 }}
@@ -100,7 +70,7 @@ const [isOpen, setIsOpen] = useState(false);
             NK
           </Link>
 
-          {/* --- Menu Desktop --- */}
+          {/* --- Desktop Menü  --- */}
           <div className="hidden md:flex items-center gap-2">
             <ul className="flex items-center gap-1">
               {menuItems.map((item) => (
@@ -115,8 +85,9 @@ const [isOpen, setIsOpen] = useState(false);
               ))}
             </ul>
 
-            {/* Bouton langue */}
+            {/* Sprache (Button) */}
             <button
+                onClick={changeLanguage}
               className="relative group ml-2 p-2 bg-gray-900/50 dark:bg-gray-800/60 backdrop-blur-xl rounded-xl 
                 border border-green-500 dark:border-gray-700 hover:border-primary dark:hover:border-primary 
                 transition-all shadow-lg"
@@ -124,7 +95,7 @@ const [isOpen, setIsOpen] = useState(false);
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-xl blur opacity-0 group-hover:opacity-30 transition duration-300"></div>
               <div className="relative flex items-center gap-1.5">
                 <Languages className="w-4 h-4 text-green-500 dark:text-gray-200" />
-                <span className="text-sm font-bold text-green-500 dark:text-gray-200">DE</span>
+                <span className="text-sm font-bold text-green-500 dark:text-gray-200">{locale}</span>
               </div>
             </button>
 
@@ -137,7 +108,7 @@ const [isOpen, setIsOpen] = useState(false);
             >☀️/🌑</button>
           </div>
 
-          {/* --- Bouton Menu Mobile --- */}
+          {/* --- Button (Mobile Menu)  --- */}
           <button
             onClick={toggleMenu}
             className="md:hidden cursor-pointer p-2 bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl rounded-lg border border-gray-700"
@@ -161,7 +132,7 @@ const [isOpen, setIsOpen] = useState(false);
             transition={{ duration: 0.3 }}
             className="fixed inset-y-0 right-0 w-90 bg-gray-900/95 backdrop-blur-xl p-6 flex flex-col gap-6 text-white z-[200] shadow-xl"
           >
-            {/* Header du drawer */}
+            {/* Header of drawer */}
             <div className="flex justify-between items-center mb-4  mb-8 pb-6 border-b border-gray-200 dark:border-gray-700">
               <span className="text-lg font-semibold">Menu</span>
               <button onClick={toggleMenu}>
@@ -169,7 +140,7 @@ const [isOpen, setIsOpen] = useState(false);
               </button>
             </div>
 
-            {/* Liens du menu */}
+            {/* Links of menu */}
             <ul className="flex flex-col gap-4">
               {menuItems.map((item) => (
                 <li key={item.label}>
@@ -190,7 +161,7 @@ const [isOpen, setIsOpen] = useState(false);
         )}
       </AnimatePresence>
 
-      {/* === Overlay (fond semi-transparent quand le menu est ouvert) === */}
+      {/* === Overlay (semi-transparent background when the menu is open) === */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
