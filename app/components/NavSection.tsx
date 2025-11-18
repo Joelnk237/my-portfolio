@@ -100,12 +100,12 @@ const changeLanguage = () => {
             </button>
 
             {/* Bouton dark mode */}
-            <button
+            {/*<button
               className="relative group p-2 bg-gray-900/50 dark:bg-gray-800/60 backdrop-blur-xl rounded-xl 
                 border border-green-500 dark:border-gray-700 hover:border-primary dark:hover:border-primary 
                 transition-all shadow-lg text-green-500"
               aria-label="Switch to dark mode"
-            >☀️/🌑</button>
+            >☀️/🌑</button>*/}
           </div>
 
           {/* --- Button (Mobile Menu)  --- */}
