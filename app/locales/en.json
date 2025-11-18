@@ -7,6 +7,28 @@
     "contact": "Contact"
   },
   "hero": {
-    "text": "I build exceptional and accessible digital experiences for the web. Focused on creating elegant solutions to complex problems."
+    "text": "I build exceptional and accessible digital experiences for the web. Focused on creating elegant solutions to complex problems.",
+    "instruction": "Scroll to explore"
+  },
+  "skills":{
+    "title": "Soft Skills",
+    "list": [
+    "Creativity",
+    "Ownership & Responsibility",
+    "Working Under Pressure",
+    "Team Collaboration",
+    "Fast Learner",
+    "Adaptability",
+    "Analytical Thinking",
+	"Problem Solving",
+    "Attention to Detail"
+  ]
+  },
+  "competences":{
+    "title": "Behind the Code"
+  },
+  "projects":{
+    "title": "Featured Projects"
   }
+
 }

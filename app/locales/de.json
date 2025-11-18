@@ -7,6 +7,27 @@
     "contact": "Kontaktdaten"
   },
   "hero": {
-    "text": "Ich entwickle außergewöhnliche und barrierefreie digitale Web-Erlebnisse. Mein Schwerpunkt liegt auf der Entwicklung eleganter Lösungen für komplexe Probleme."
+    "text": "Ich entwickle außergewöhnliche und barrierefreie digitale Web-Erlebnisse. Mein Schwerpunkt liegt auf der Entwicklung eleganter Lösungen für komplexe Probleme.",
+    "instruction": "Scrollen Sie zum Entdecken"
+  },
+  "skills":{
+    "title": "Persönliche Stärken",
+    "list": [
+    "Kreativität",
+    "Eigenverantwortung & Verantwortungsbewusstsein",
+    "Arbeiten unter Druck",
+    "Teamzusammenarbeit",
+    "Schneller Lerner",
+    "Anpassungsfähigkeit",
+    "Analytisches Denken",
+    "Problemlösungskompetenz",
+    "Liebe zum Detail"
+  ]
+  },
+  "competences":{
+    "title": "Was ich als Entwickler leiste"
+  },
+  "projects":{
+    "title": "Featured Projekte"
   }
 }

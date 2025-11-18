@@ -3,6 +3,7 @@
 import { motion, easeOut } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import { useTranslation } from "@/app/hooks/useTranslation";  // for Translation
 import {
 	faCogs,
 	faDatabase,
@@ -11,6 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function CompetencesSection() {
+    const t = useTranslation(); // für Traduction
 
     // Animation konfiguration
   const fadeUp = {
@@ -83,7 +85,7 @@ export default function CompetencesSection() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
-          {/*Impact & Achievements*/}Behind the Code
+          {/*Behind the Code*/}{t.competences.title}
         </motion.h2>
 
         {/* Loop über die Sektionen */}

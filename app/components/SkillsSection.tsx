@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 
+import { useTranslation } from "@/app/hooks/useTranslation";  // for Traduction
+
 export default function SkillsSection() {
 	//const skills = ['JavaScript', 'TypeScript', 'React', 'Node.js', 'Next.js', 'TailwindCSS', 'PostgreSQL', 'GraphQL', 'Git'];
-	const skills = [
+	/*const skills = [
     'Creativity',
     'Ownership & Responsibility',
     'Working Under Pressure',
@@ -12,7 +14,9 @@ export default function SkillsSection() {
     'Analytical Thinking',
 	'Problem Solving',
     'Attention to Detail'
-  ];
+  ];*/
+  const t = useTranslation(); // for  Traduction
+  const skills: string[] = t.skills.list;
 
   // Animation "container" (coordonne les enfants)
   const container = {
@@ -46,7 +50,7 @@ export default function SkillsSection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          Soft Skills{/*& Technologies*/}
+          {t.skills.title}{/*Soft Skills*/}
         </motion.h2>
 
         {/* Grille animée */}

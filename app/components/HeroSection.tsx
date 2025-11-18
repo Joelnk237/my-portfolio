@@ -84,13 +84,16 @@ const [isClient, setIsClient] = useState(false);
 						<span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20">Java</span>
 						<span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20">Next.js</span>
 						<span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20">Typescript</span>
+            <span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20">PHP</span>
+            <span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20">Git</span>
+            <span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20">SQL</span>
 					</div>
 					</div>
 				</div>
 			</div>
 			</div>
 			<div className="absolute bottom-8 inset-x-0 flex flex-col items-center animate-bounce">
-				<span className="text-gray-400 text-sm mb-2 text-center">Scroll to explore</span>
+				<span className="text-gray-400 text-sm mb-2 text-center">{/*Scroll to explore*/}{t.hero.instruction}</span>
 				<svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
 				</svg>
