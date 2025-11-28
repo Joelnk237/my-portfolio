@@ -14,7 +14,7 @@ const [isClient, setIsClient] = useState(false);
   useEffect(() => setIsClient(true), []);
 	
 	return (
-		<section id="home" className="relative min-h-screen items-center justify-center overflow-hidden h-[95vh]"> {/* relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 */}
+		<section id="home" className="relative min-h-screen items-center justify-center overflow-hidden"> {/* relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 */} {/*h-[95vh]*/}
       {/* --- Background with bubbles --- */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0  opacity-30" />
